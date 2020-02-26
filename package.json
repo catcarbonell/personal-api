@@ -1,0 +1,19 @@
+{
+  "name": "personal-api",
+  "version": "1.0.0",
+  "description": "A display of proficiency in CRUD programming and utilizing NodeJS (Mongoose, Express) + MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catcarbonell/personal-api.git"
+  },
+  "author": "Cathleen Carbonell-Ballar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catcarbonell/personal-api/issues"
+  },
+  "homepage": "https://github.com/catcarbonell/personal-api#readme"
+}
