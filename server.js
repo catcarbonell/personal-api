@@ -5,6 +5,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 4200;
 
+// Require Models
+const db = require('./models');
+
+
 app.use(bodyParser.json());
 
 /************
@@ -40,7 +44,6 @@ app.get('/profile', (req, res) => {
 
 // *** PROJECTS ROUTES *** //
 app.get('/projects', (req, res) => {
-    // something goes here??
     console.log("Projects go here");
 });
 
@@ -57,8 +60,6 @@ app.delete('/projects:id', (req, res) => {
 });
 
 
-  // *** PORTFOLIO PROJECTS *** //
-
  /**********
  * HTML Endpoints *
  **********/
@@ -72,6 +73,7 @@ app.delete('/projects:id', (req, res) => {
  **********/
 app.get('/api', (req, res) => {
     res.json({
+        AllMyEndpointsError: true,
         message: "Hello world! :B",
         documentationUrl: "https://github.com/catcarbonell/personal-api/README.md",
         baseURL: "http://catballar-api.herokuapp.com",
