@@ -11,6 +11,7 @@ app.use(bodyParser.json());
  * DATABASE *
  ************/
 // Setting up TEMP info
+// Add fontawesome icons later
 const TEMP_SELF = {
     name: "Cathleen Carbonell-Ballar",
     profileImg: "*** INSERT URL FROM IMAGES DIR HERE ***",
@@ -25,12 +26,38 @@ const TEMP_SELF = {
     {type: "Facebook", handle: "/catcarbonell", url: "http://facebook.com/catcarbonell"}
     ]
 }
-console.log(TEMP_SELF);
+//console.log(TEMP_SELF);
+
  /**********
  * ROUTES *
  **********/
 // Serve static files from the `/public` directory:
 // i.e. `/images`, `/scripts`, `/styles`
+
+app.get('/profile', (req, res) => {
+    res.json(TEMP_SELF);
+  });
+
+// *** PROJECTS ROUTES *** //
+app.get('/projects', (req, res) => {
+    // something goes here??
+    console.log("Projects go here");
+});
+
+app.post('/projects', (req, res)=>{
+    console.log("Projects go here");
+});
+
+app.put('/projects:id', (req, res)=> {
+    console.log("Individual project update");
+});
+
+app.delete('/projects:id', (req, res) => {
+    console.log("Delete project")
+});
+
+
+  // *** PORTFOLIO PROJECTS *** //
 
  /**********
  * HTML Endpoints *
@@ -38,6 +65,7 @@ console.log(TEMP_SELF);
 // app.get('/', function homepage(req, res){
 //     res.sendFile('/views/index.html', {root: __dirname});
 // });
+
 
  /**********
  * JSON API ENDPOINTS *
@@ -64,35 +92,35 @@ app.get('/api', (req, res) => {
             // _id, name, description, githubRepoUrl, deployedUrl, screenshot
 
             {method: "POST",
-            path: "/api/portfolio",
+            path: "/api/projects",
             description: "Post more projects!"
             },
 
             {method: "PUT",
-            path: "/api/portfolio/:id",
+            path: "/api/projects/:id",
             description: "Edit a project"},
 
             {method: "DELETE",
-            path: "/api/portfolio/:id",
+            path: "/api/projects/:id",
             description: "Delete a project"},
 
             // ** STICKER GALLERY ** //
             {method: "GET",
-            path: "/api/stickers",
-            description: "A gallery of all available stickers to purchase from me!"
+            path: "/api/store",
+            description: "A gallery of all available store to purchase from me!"
             },
 
             {method: "POST",
-            path: "/api/stickers",
-            description: "Post more stickers!"
+            path: "/api/store",
+            description: "Post more store!"
             },
 
             {method: "PUT",
-            path: "/api/stickers/:id",
+            path: "/api/store/:id",
             description: "Edit a sticker"},
 
             {method: "DELETE",
-            path: "/api/stickers/:id",
+            path: "/api/store/:id",
             description: "Delete a sticker"}
         ]
     })
